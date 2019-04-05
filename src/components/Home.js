@@ -44,7 +44,7 @@ class Home extends Component
     {
         var l = document.getElementsByClassName('Loader');
         var cntnr = document.getElementsByClassName('container');
-        l[0].style.display = 'block' ;  //ever API requeest should have loaders for better User Experience
+        l[0].style.display = 'block' ;  //every API requeest should have loaders for better User Experience
         cntnr[1].style.opacity = '0.5';  //Little transition to show delete effect
         console.log(cntnr);
         
@@ -67,10 +67,11 @@ class Home extends Component
             });
     }
 
-    SaveCard() {
+    SaveCard()
+    {
         var l = document.getElementsByClassName('Loader');
         var cntnr = document.getElementsByClassName('container');
-        l[0].style.display = 'block';  //ever API requeest should have loaders for better User Experience
+        l[0].style.display = 'block';  //every API requeest should have loaders for better User Experience
         cntnr[1].style.opacity = '0.5';  //Little transition to show delete effect
         
         var ob = {};
@@ -120,10 +121,7 @@ class Home extends Component
         console.log('to be deleted'+id);   
         this.setState({ currentpostid: id })
     }
-    
 
-
-    
     render()
     {
         const { CardItems } = this.state;
@@ -170,8 +168,8 @@ class Home extends Component
                         )
                     })
                 ) :
-                (   /* by the time post gets loaded show this */
-                    <Looader/>
+                ( 
+                    <Looader />   /* by the time post gets loaded show this */
                 );
 
         
@@ -192,6 +190,8 @@ class Home extends Component
                         <i className="fa fa-plus-circle addCard" aria-hidden="true"></i>
                     </div>
 
+                    {/* Code reuse: Passing method & string as prop to Child component Modal */}
+
                     <Modal title="Are you sure you want to delete this Card" action={this.DeleteCard.bind(this, this.state.currentpostid)} actionName="Yes" id="DeleteCard" />
 
                     <Modal title="Add new Card to you collection" action={this.SaveCard.bind(this)} actionName="Save" id="AddCard">
@@ -211,8 +211,6 @@ class Home extends Component
                             </form>
                         </div>
                     </Modal>
-
-                    {/* Code reuse: Passing method & string as prop to Child component  */}
                     
                 </div>
             </> /* Fragments prevent creatio of extra nodes */

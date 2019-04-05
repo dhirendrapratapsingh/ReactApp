@@ -15,7 +15,7 @@ class LoginForm extends Component
     auth0 = new auth0.WebAuth({
         domain: 'dhirensingh.auth0.com',
         clientID: '27qWdjwLT4NYlP5m7RiYF65T1wGztxFX',
-        redirectUri: 'http://localhost:3000/home',
+        redirectUri: 'http://localhost:3000/home', // app ir redirected to this url if authorization is succesful
         responseType: 'token id_token',
         scope: 'openid'
     });

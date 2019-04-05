@@ -24,7 +24,7 @@ const Navbar = () => {
             <ul className="nav navbar-nav right">
                 <li><NavLink to="/home">Home</NavLink></li>
                 <li><NavLink to='/PostList'>Posts</NavLink></li>
-                <li><NavLink to='/contact'>Contact</NavLink></li>
+                <li><NavLink to='/contact'>About me</NavLink></li>
                 {/* <li className="dropdown">
                     <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span className="caret"></span></a>
                     <ul className="dropdown-menu" aria-labelledby="about-us">

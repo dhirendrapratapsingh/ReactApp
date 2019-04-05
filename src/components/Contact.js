@@ -83,70 +83,74 @@ const Contact = () => {
                     <p>
                         <ul>
                             <li>
-                            <span id="course-name">Wishbook Wholesale App</span>  is an online Indian marketplace where textile Manufacturers and Wholesalers sell their products, 
-                            while Resellers and Retailers purchase them.iOS App & Mobile browser app (Cordova+onsen+AngularJS)</li>
+                                <span id="course-name">Wishbook Wholesale App</span><br/>
+                                is an online Indian marketplace where textile Manufacturers and Wholesalers sell their products, 
+                                while Resellers and Retailers purchase them.iOS App & Mobile browser app (Cordova+onsen+AngularJS)
+                            </li>
                             <li>
-                            <span id="course-name">Wishbook Seller/admin panel </span> (web Application: AngularJS)</li>
+                                <span id="course-name">Wishbook Seller/admin panel </span><br/>
+                                (web Application: AngularJS, AngularDatatablesv0,6x)
+                            </li>
                             <li>
-                            <span id="course-name">Character Recognizer using KNN </span> (python-Window Apppublished paper in IEEE Bangkok Conference 2017 - my work with name on Google search )</li>
+                                <span id="course-name">Character Recognizer using KNN </span><br/>
+                                (python-Window Apppublished paper in IEEE Bangkok Conference 2017 - my work with name on Google search )
+                            </li>
                             <li>
-                            <span id="course-name">Map of places to visit in Jamshedpur </span>
-                            Google map API based
-                            application showing
-                            places list & markers on
-                            map with search feature &
-                            on click fetches & displays
-                            JSON data from 3rd party
-                            Foursquare API
-                            ( SPA Google map API +Foursquare API integration:JavaScript
-                                HTML5
-                                CSS3
-                                jQuery
-                                Bootstrap
-                                Google map API
+                                <span id="course-name">Map of places to visit in Jamshedpur </span><br />
+                                Google map API based
+                                application showing
+                                places list & markers on
+                                map with search feature &
+                                on click fetches & displays
+                                JSON data from 3rd party
                                 Foursquare API
-                                Knockout JS)</li>          
+                                ( SPA Google map API +Foursquare API integration:JavaScript,HTML5,CSS3,jQuery,Bootstrap,Google map API,Foursquare API, Knockout JS)
+                            </li>          
                             <li>
-                            <span id="course-name">Classic Arcade Game </span>
-                            The objective is to make
-                            the player reach to the
-                            water crossing through
-                            the road tiles without
-                            colliding with bugs which
-                            keep appearing & running
-                            at random speed.
-                            Collision causes 1 life loss
-                            & resets player to original
-                            position
-                            (Js, html5, sweetalert2, jQuery, bootstrap4, canvas js)</li>
+                                <span id="course-name">Classic Arcade Game </span><br/>
+                                The objective is to make
+                                the player reach to the
+                                water crossing through
+                                the road tiles without
+                                colliding with bugs which
+                                keep appearing & running
+                                at random speed.
+                                Collision causes 1 life loss
+                                & resets player to original
+                                position
+                                (Js, html5, sweetalert2, jQuery, bootstrap4, canvas js)
+                            </li>
                             <li>
-                            <span id="course-name">Card Matching Memory Game </span>
-                            There are eight pairs of
-                            turned cards on the panel.
-                            The card flips when
-                            clicked & shows its icon.
-                            On clicking next card it
-                            flips:
-                            * If the 2nd card icon
-                            matches with 1st one then
-                            both cards gets locked.
-                            * Else the unmatched
-                            cards flip back to initial
-                            state.
-                            Objective is to open all the
-                            cards using memory in as
-                            lesser time and steps.
-                            (Js, jQuery, SweetAlert2,FontAwesome)</li>
+                            <span id="course-name">Card Matching Memory Game </span><br />
+                                There are eight pairs of
+                                turned cards on the panel.
+                                The card flips when
+                                clicked & shows its icon.
+                                On clicking next card it
+                                flips:
+                                * If the 2nd card icon
+                                matches with 1st one then
+                                both cards gets locked.
+                                * Else the unmatched
+                                cards flip back to initial
+                                state.
+                                Objective is to open all the
+                                cards using memory in as
+                                lesser time and steps.
+                                (Js, jQuery, SweetAlert2,FontAwesome)
+                            </li>
                             <li>
-                            <span id="course-name">Online Police Station </span>
-                                To lodge & handle
-                                complains online
-                                (.NET c#,mySQL-Visial studio)</li>
+                            <span id="course-name">Online Police Station </span><br />
+                                    To lodge & handle
+                                    complains online
+                                    (.NET c#,mySQL-Visial studio)
+                            </li>
                             <li>
-                            <span id="course-name">Appraisal Management System </span>
-                            To give grades to
-                            employees based on
-                            performance( J2EE, servlets,JSP -Eclipse)</li>
+                            <span id="course-name">Appraisal Management System </span><br />
+                                To give grades to
+                                employees based on
+                                performance( J2EE, servlets,JSP -Eclipse)
+                            </li>
                         </ul>
                     </p> 
                 </div>
