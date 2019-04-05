@@ -1,16 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### `Dependencies/Libraries used `
 
@@ -67,7 +55,15 @@ Impemented User Sign in page(Authorizartion via integrating .[auth0](https://aut
 Auth0 provides authentication and authorization as a service to make application secure
 
 
-`email -testdhirensapp@react.com`<br>
+`email -testdhirensapp@react.com`<br>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 `password-  123456789@Dps`
 
 
@@ -87,3 +83,12 @@ Auth0 provides authentication and authorization as a service to make application
 12. My Portfolio 
 13. Implemented React portal usage
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
