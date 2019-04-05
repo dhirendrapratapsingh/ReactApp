@@ -12,58 +12,78 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `Dependencies/Libraries used `
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[React JS(UI)](https://reactjs.org/docs/getting-started.html),
+[axios( http API Calls)](https://www.npmjs.com/package/axios),
+[Bootstrap3.7](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js), <br>
+[jQuery3.3](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js),
+[Fontawsome](https://fontawesome.com/v4.7.0/icons/), 
+[MaterializeCSS](https://materializecss.com/getting-started.html),
+[reactRouter](https://www.npmjs.com/package/react-router-dom)
+[npm]()
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Steps to create Project & add all dependencies in Ubntu18.04>`
+
+`shortcut way is just download whole project install npm >go inside project directory > npm start`
+
+`Install nodejs npm npx` <br>
+sudo apt update<br>
+sudo apt install nodejs npm<br>
+sudo apt install npm<br>
+
+npm install -g npx<br>
+npx create-react-app [react-app/YourAppName]<br>
+cd react-app<br>
+npm start<br>
+
+Then open http://localhost:3000/ to see your app.<br>
+stop ctrl+c to add dependencies
+
+`Libraries & framework` <br>
+
+npm install axios<br>
+npm install --save react-router-dom<br>
+
+The following cdns are included in index.html via scipt/links
+[Bootstrap3.7](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js),
+[jQuery3.3](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js),
+[Fontawsome](https://fontawesome.com/v4.7.0/icons/), 
+[MaterializeCSS](https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css)<br>
+
+replace src folder in react-app with my src folder to get code & resources<br>
+
+npm start<br>
+open http://localhost:3000/ to run app again.
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `Auth0 Authorization Credentials`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Impemented User Sign in page(Authorizartion via integrating .[auth0](https://auth0.com/docs) )
+Auth0 provides authentication and authorization as a service to make application secure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`email -testdhirensapp@react.com`<br>
+`password-  123456789@Dps`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Impemented User Sign in page(Authorizartion via .auth0 )Auth0 provides authentication and authorization as a service to make application secure.
+2. Implemented  Routing mechanism- Navigation to different pages
+3. Nav bar
+4. List of cards- in Home tab
+5. Delete action- icon on top right of each button
+6. Add card: bottom right of Home window
+7. mock API used calls for actions- https://jsonplaceholder.typicode.com/
+8. Implemented Modals on both actions.
+9. Loader effect for async transitions 
+10. Full Responsiveness compatiblity with mobile
+11. Post list page with animation clicking on any post opens Post Details fetched via API call
+12. My Portfolio 
+13. Implemented React portal usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# ReactApp
