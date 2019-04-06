@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Looader from './Loader';
 import Modal from './Modal';
+import { Link } from "react-router-dom";
 
 
 
@@ -18,33 +19,34 @@ class Home extends Component
             cardTitle: 'My New card',
             albumId: 'xxxx',
             imageUrl: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-kittens-wallpapers.jpg',
+            CardItemsCopy: [],
+            showemptyMessage : false,
+            showLoader : false,
+            order : 'none'
         };
-        this.modelChildtRef = React.createRef(); //used to get refernce of child component
+        //this.modelChildtRef = React.createRef(); used to get refernce of child component
     }
 
-    componentDidMount() {
+    componentDidMount()
+    {
+        this.setState({ 'showLoader': true }); //every API requeest should have loaders for better User Experience
         axios.get('https://jsonplaceholder.typicode.com/photos/')
             .then(res => {
                 console.log(res);
+
                 this.setState({
-                    CardItems: res.data.slice(0, 20)
+                    CardItems: res.data.slice(0, 20),
+                    CardItemsCopy: res.data.slice(0, 20),
+                    'showLoader': false
                 });
             })
-
-        console.log(this.modelChildtRef);
     }
     
 
-    openInNewTab(link,e)
-    {
-        window.open(link, "new tab");
-    }
-
     DeleteCard(id)
     {
-        var l = document.getElementsByClassName('Loader');
+        this.setState({ 'showLoader': true }); 
         var cntnr = document.getElementsByClassName('container');
-        l[0].style.display = 'block' ;  //every API requeest should have loaders for better User Experience
         cntnr[1].style.opacity = '0.5';  //Little transition to show delete effect
         console.log(cntnr);
         
@@ -53,7 +55,7 @@ class Home extends Component
             .then(res => 
             {
                 console.log('delete successful');
-                l[0].style.display = 'none';
+                this.setState({ 'showLoader': false });
                 cntnr[1].style.opacity = '1'; 
                 
                 this.setState(previousState => {
@@ -69,10 +71,10 @@ class Home extends Component
 
     SaveCard()
     {
-        var l = document.getElementsByClassName('Loader');
-        var cntnr = document.getElementsByClassName('container');
-        l[0].style.display = 'block';  //every API requeest should have loaders for better User Experience
-        cntnr[1].style.opacity = '0.5';  //Little transition to show delete effect
+        
+        this.setState({ 'showLoader': true }); 
+        var cntnr = document.getElementsByClassName('container');  
+        cntnr[1].style.opacity = '0.5'; 
         
         var ob = {};
         ob.id = Math.floor(Math.random() * 1000 + 1); //genererate a random id
@@ -87,7 +89,7 @@ class Home extends Component
             .then(res => {
                 
                 console.log('Save successful');
-                l[0].style.display = 'none';
+                this.setState({ 'showLoader': false });
                 cntnr[1].style.opacity = '1';
 
                 
@@ -100,11 +102,96 @@ class Home extends Component
                         CardItems: copy
                     };
                 });
+                
             })
             .catch(err => {
                 console.log(err);
             });
     }
+
+
+    filterCards = (event) =>
+    {
+        console.log(event.target.value + ' , ' + this.state.CardItems.length);
+        
+        var updatedList = [];
+        if (event.target.value.length > 0)
+        {
+            updatedList = this.state.CardItemsCopy.filter(function (item) {
+                return item.title.toLowerCase().startsWith(event.target.value.toLowerCase())
+            });
+
+            if (updatedList.length <= 0){
+                this.setState({ 'showemptyMessage': true,
+                                showLoader : false});
+            }
+            else{
+                this.setState({ 'showemptyMessage': false });
+            }
+
+            this.setState({ CardItems: updatedList });
+        }
+        else
+        {
+            this.setState({ CardItems: this.state.CardItemsCopy,
+                            'showemptyMessage': false  });
+        }
+    }
+
+    sortList = (event) =>
+    {
+        console.log(event.target.value + ' , ' + this.state.CardItems.length);
+
+        var updatedList = [];
+        if (this.state.order == 'none')
+        {
+            updatedList = this.state.CardItems.sort(function (itemN, itemN_1)
+            {
+                var itemN_TITLE = itemN.title.toUpperCase(); // ignore upper and lowercase
+                var itemN_1_TITLE = itemN_1.title.toUpperCase();
+                if (itemN_TITLE < itemN_1_TITLE) {
+                    return -1;
+                }
+                if (itemN_TITLE > itemN_1_TITLE) {
+                    return 1;
+                }
+                // names must be equal
+                return 0;
+            });
+
+            this.setState({ CardItems: updatedList,
+                            order : 'ascending'});
+        }
+        else if (this.state.order == 'ascending')
+        {
+            updatedList = this.state.CardItems.sort(function (itemN, itemN_1) {
+                var itemN_TITLE = itemN.title.toUpperCase(); // ignore upper and lowercase
+                var itemN_1_TITLE = itemN_1.title.toUpperCase();
+                if (itemN_TITLE > itemN_1_TITLE) {
+                    return -1;
+                }
+                if (itemN_TITLE < itemN_1_TITLE) {
+                    return 1;
+                }
+                return 0;
+            });
+
+            this.setState({
+                CardItems: updatedList,
+                order: 'descending'
+            });
+        }
+        else if (this.state.order == 'descending')
+        {
+            this.setState({
+                CardItems: this.state.CardItemsCopy,
+                order: 'none'
+            }); // cards arranged to its default order
+        }
+        
+    }
+
+    
 
     handleInputChange = (event) =>
     {
@@ -114,7 +201,11 @@ class Home extends Component
             [name] : value
         })
     }
+    
 
+    openInNewTab(link, e) {
+        window.open(link, "new tab");
+    }
     
     updateId(id)
     {
@@ -140,17 +231,22 @@ class Home extends Component
                                         </div>
                                     </div>
 
-                                    <div className="row">
-                                        <div className="center">
-                                            <img className="avtar" src={post.thumbnailUrl} alt="Card Image" />
-                                        </div>
-                                    </div>
+                                    <Link to={'/home/' + post.id}>
 
-                                    <div className="row">
-                                        <div className="title">
-                                            <label className="title">{post.title}</label>
+                                        <div className="row">
+                                            <div className="center">
+                                                <img className="avtar" src={post.thumbnailUrl} alt="Card Image" />
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div className="row">
+                                            <div className="title">
+                                                <label className="title">{post.title}</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </Link>
+                                    
 
                                     <div className="row" id="metricrow">
                                         <label className="center width40" >
@@ -169,7 +265,7 @@ class Home extends Component
                     })
                 ) :
                 ( 
-                    <Looader />   /* by the time post gets loaded show this */
+                   null   
                 );
 
         
@@ -178,19 +274,34 @@ class Home extends Component
             <>
                 <div className="container">
                     <div className="row">
-                        <h4 className="ListHeading">Card List</h4>
+                        <div className="col-md-3 col-sm-3">
+                            <h3 className="ListHeading">Card List</h3>
+                            <i style={{ 'display': this.state.order == 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
+                            <i style={{ 'display': this.state.order == 'ascending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-asc sortList" aria-hidden="true" title="click to sort list in descending"></i>
+                            <i style={{ 'display': this.state.order == 'descending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-desc sortList" aria-hidden="true" title="Back to default order"></i>
+                        </div>
+                        <div className="col-md-3 col-sm-3">
+                            <input type="search" className="form-control" placeholder="search card title" onChange={this.filterCards}/> 
+                        </div>
+                        
                     </div>
-                    <div className="row">
-                        {CardList}
+
+                        
+                    <div className="row">{CardList}</div>
+
+                    <div className="Loader" style={{ 'display': this.state.showLoader ? 'block' : 'none' }}>
+                        <Looader /> {/* by the time post gets loaded show this */}
                     </div>
-                    <div className="Loader">
-                        <Looader />
+
+                    <div className="EmptyList" style={{'display': this.state.showemptyMessage? 'block':'none'}}>
+                        <h3 >No such item found in list </h3>
                     </div>
-                    <div id="mybutton" data-target="#AddCard" data-toggle="modal">
+
+                    <div id="addbutton" data-target="#AddCard" data-toggle="modal">
                         <i className="fa fa-plus-circle addCard" aria-hidden="true"></i>
                     </div>
 
-                    {/* Code reuse: Passing method & string as prop to Child component Modal */}
+                    {/* Code reuse: Passing method & strings as prop to Child component Modal */}
 
                     <Modal title="Are you sure you want to delete this Card" action={this.DeleteCard.bind(this, this.state.currentpostid)} actionName="Yes" id="DeleteCard" />
 
@@ -205,7 +316,8 @@ class Home extends Component
                                     Album Id :<input type="text" name="albumId" value={this.state.albumId} onChange={this.handleInputChange} className="form-control" />
                                 </div>
                                 <div className="row">
-                                    Image Url  :<input type="url" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} className="form-control" placeholder="Please enter a valid image url" />
+                                    Image Url  :<input type="url" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} className="form-control" placeholder="Enter url" describedby="helpertext" />
+                                        <span id="helpertext" class="help-block">Please enter a valid image url</span>
                                 </div>
                                 
                             </form>

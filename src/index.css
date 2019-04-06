@@ -23,6 +23,13 @@ code {
 .post{
   overflow: hidden;
   padding-left: 80px;
+  
+}
+
+.postDetail
+{
+  color: gray;
+  font-size: small;
 }
 
 body

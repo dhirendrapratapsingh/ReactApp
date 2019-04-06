@@ -8,6 +8,7 @@ import Home from './components/Home'
 import PostList from './components/PostList'
 import Contact from './components/Contact'
 import Post from './components/Posts'
+import CardDetails from './components/CardDetails'
 import LoginForm from './components/LoginForm';
 import "./App.css";
 import "./index.css";
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path='/PostList' component={PostList} />
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/PostList/:post_id' component={Post} />
+            <Route exact path='/Home/:photo_id' component={CardDetails} />
           </Switch>
           
         </div>

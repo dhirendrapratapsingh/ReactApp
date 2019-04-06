@@ -23,12 +23,19 @@ class Post extends Component
   {
      const post = this.state.post ?
      (
-      <div className="post">
-          <div className="row">
-            <h4 className="center">{this.state.post.title}</h4>
-          </div> 
-        <p>{this.state.post.body}</p>
-      </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+              <h1 class="panel-title">Post details</h1>
+            </div>
+            <div class="panel-body">
+                <div className="postDetail">
+                    <div className="row">
+                      <h4 className="center">{this.state.post.title}</h4>
+                    </div> 
+                  <p>{this.state.post.body}</p>
+                </div>
+            </div>
+        </div>
     ) : (
       <div className="center">Loading post...</div>
     );

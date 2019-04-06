@@ -32,7 +32,6 @@
     transform: rotate(360deg);
   }
 }
-/* My css */
 
 .app {
   background: #209cee;
@@ -63,6 +62,7 @@
 {
   float: left;
   color: gray;
+  margin-top: 2px;
 }
 
 nav.brand-logo
@@ -116,6 +116,8 @@ nav.brand-logo
   font-size: 10px;
   line-height: 12px;
   font-weight: lighter;
+  cursor: pointer;
+  color: gray;
 }
 
 .center
@@ -148,17 +150,28 @@ nav.brand-logo
   top: 55%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); 
-
+  transform: translate(-50%, -50%);
 
 }
 
 
-#mybutton {
+#addbutton {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
+
+
+.sortList
+{
+  font-size: 20px;
+    color: gray;
+    padding: 5px;
+    cursor: pointer;
+    float: left;
+  margin-left: 20px;
+}
+
 .addCard
 {
   font-size: 40px;
@@ -180,4 +193,15 @@ nav.brand-logo
     overflow-y: auto;
     border-radius: 2px;
     will-change: top, opacity; 
+}
+
+.EmptyList
+{
+  text-align: center;
+  color: silver;
+}
+
+.panel{
+  margin-bottom: 0px;
+  border-radius: 10px;
 }
