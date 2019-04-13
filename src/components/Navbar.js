@@ -1,5 +1,6 @@
 import React from 'react';
 import {  NavLink} from "react-router-dom";
+import brandlogo from '../airbnblogo2.png'
 
 
 const Navbar = () => {
@@ -16,13 +17,14 @@ const Navbar = () => {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="/home">Dhiren's React App</a>
+                    <a className="navbar-brand " href="/home"><img src={brandlogo} alt="brand logo" style={{'width':'100px'}} /></a>
         </div>
 
         <div className="collapse navbar-collapse" id="alignment-example">
 
             <ul className="nav navbar-nav right">
                 <li><NavLink to="/home">Home</NavLink></li>
+                <li><NavLink to="/cards">Cards</NavLink></li>
                 <li><NavLink to='/PostList'>Posts</NavLink></li>
                 <li><NavLink to='/contact'>About me</NavLink></li>
                         

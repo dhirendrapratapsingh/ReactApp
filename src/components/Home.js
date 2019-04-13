@@ -1,329 +1,223 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import Looader from './Loader';
-import Modal from './Modal';
-import { Link } from "react-router-dom";
-
-
-
-/* Since Placeholder isOnline REST API for Testing and Prototyping
-it doesnt change the data on the server but it appears like it*/
 
 class Home extends Component
 {
     constructor(props) {
         super(props);
-        this.state = {
-            CardItems: [],
-            currentpostid : null,
-            cardTitle: 'My New card',
-            albumId: 'xxxx',
-            imageUrl: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-kittens-wallpapers.jpg',
-            CardItemsCopy: [],
-            showemptyMessage : false,
-            showLoader : false,
-            order : 'none'
-        };
-        //this.modelChildtRef = React.createRef(); used to get refernce of child component
-    }
+        this.firsttabref =React.createRef();
 
+    }
     componentDidMount()
     {
-        this.setState({ 'showLoader': true }); //every API requeest should have loaders for better User Experience
-        axios.get('https://jsonplaceholder.typicode.com/photos/')
-            .then(res => {
-                console.log(res);
+        this.firsttabref.current.click(); //to gete reference of 1s tab
+    }
 
-                this.setState({
-                    CardItems: res.data.slice(0, 20),
-                    CardItemsCopy: res.data.slice(0, 20),
-                    'showLoader': false
-                });
-            })
+
+    openTab(tabName, event)
+    {
+        
+        var i, tabcontent, tablinks;
+
+        // Get all elements with className="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+ 
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with className="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" activetab", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        if (event) {
+            event.currentTarget.className += " activetab";
+        }
+        document.getElementById(tabName).style.display = "block";
+       
+        console.log(event.target);
+    
     }
     
 
-    DeleteCard(id)
-    {
-        this.setState({ 'showLoader': true }); 
-        var cntnr = document.getElementsByClassName('container');
-        cntnr[1].style.opacity = '0.5';  //Little transition to show delete effect
-        console.log(cntnr);
-        
-        
-        axios.delete('https://jsonplaceholder.typicode.com/photos/'+id)
-            .then(res => 
-            {
-                console.log('delete successful');
-                this.setState({ 'showLoader': false });
-                cntnr[1].style.opacity = '1'; 
-                
-                this.setState(previousState => {
-                    return {
-                        CardItems: previousState.CardItems.filter(item => item.id !== id)
-                    };
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    SaveCard()
-    {
-        
-        this.setState({ 'showLoader': true }); 
-        var cntnr = document.getElementsByClassName('container');  
-        cntnr[1].style.opacity = '0.5'; 
-        
-        var ob = {};
-        ob.id = Math.floor(Math.random() * 1000 + 1); //genererate a random id
-        ob.thumbnailUrl = this.state.imageUrl;
-        ob.title = this.state.cardTitle;
-        ob.albumId = this.state.albumId;
-        ob.url = this.state.imageUrl;
-        console.log(ob);
-
-
-        axios.post('https://jsonplaceholder.typicode.com/photos/',ob)
-            .then(res => {
-                
-                console.log('Save successful');
-                this.setState({ 'showLoader': false });
-                cntnr[1].style.opacity = '1';
-
-                
-                var copy = this.state.CardItems;
-                copy.unshift(ob)
-                
-
-                this.setState(previousState => {
-                    return {
-                        CardItems: copy
-                    };
-                });
-                
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-
-    filterCards = (event) =>
-    {
-        console.log(event.target.value + ' , ' + this.state.CardItems.length);
-        
-        var updatedList = [];
-        if (event.target.value.length > 0)
-        {
-            updatedList = this.state.CardItemsCopy.filter(function (item) {
-                return item.title.toLowerCase().startsWith(event.target.value.toLowerCase())
-            });
-
-            if (updatedList.length <= 0){
-                this.setState({ 'showemptyMessage': true,
-                                showLoader : false});
-            }
-            else{
-                this.setState({ 'showemptyMessage': false });
-            }
-
-            this.setState({ CardItems: updatedList });
-        }
-        else
-        {
-            this.setState({ CardItems: this.state.CardItemsCopy,
-                            'showemptyMessage': false  });
-        }
-    }
-
-    sortList = (event) =>
-    {
-        console.log(event.target.value + ' , ' + this.state.CardItems.length);
-
-        var updatedList = [];
-        if (this.state.order == 'none')
-        {
-            updatedList = this.state.CardItems.sort(function (itemN, itemN_1)
-            {
-                var itemN_TITLE = itemN.title.toUpperCase(); // ignore upper and lowercase
-                var itemN_1_TITLE = itemN_1.title.toUpperCase();
-                if (itemN_TITLE < itemN_1_TITLE) {
-                    return -1;
-                }
-                if (itemN_TITLE > itemN_1_TITLE) {
-                    return 1;
-                }
-                // names must be equal
-                return 0;
-            });
-
-            this.setState({ CardItems: updatedList,
-                            order : 'ascending'});
-        }
-        else if (this.state.order == 'ascending')
-        {
-            updatedList = this.state.CardItems.sort(function (itemN, itemN_1) {
-                var itemN_TITLE = itemN.title.toUpperCase(); // ignore upper and lowercase
-                var itemN_1_TITLE = itemN_1.title.toUpperCase();
-                if (itemN_TITLE > itemN_1_TITLE) {
-                    return -1;
-                }
-                if (itemN_TITLE < itemN_1_TITLE) {
-                    return 1;
-                }
-                return 0;
-            });
-
-            this.setState({
-                CardItems: updatedList,
-                order: 'descending'
-            });
-        }
-        else if (this.state.order == 'descending')
-        {
-            this.setState({
-                CardItems: this.state.CardItemsCopy,
-                order: 'none'
-            }); // cards arranged to its default order
-        }
-        
-    }
-
-    
-
-    handleInputChange = (event) =>
-    {
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name] : value
-        })
-    }
-    
-
-    openInNewTab(link, e) {
-        window.open(link, "new tab");
-    }
-    
-    updateId(id)
-    {
-        console.log('to be deleted'+id);   
-        this.setState({ currentpostid: id })
-    }
+   
 
     render()
     {
-        const { CardItems } = this.state;
-
-        const CardList =
-            CardItems.length ?
-                (
-                    CardItems.map(post => {
-                        return (
-                            <div className="col-md-4 col-sm-6" key={post.id}>
-                                <div className="mycard" >
-
-                                    <div className="row">
-                                        <div style={{ float: 'right' }} data-toggle="modal" data-target="#DeleteCard" onClick={this.updateId.bind(this,post.id)}>
-                                            <em className="fa fa-trash delIcon" title="Delete"></em>                 
-                                        </div>
-                                    </div>
-
-                                    <Link to={'/home/' + post.id}>
-
-                                        <div className="row">
-                                            <div className="center">
-                                                <img className="avtar" src={post.thumbnailUrl} alt="Card Image" />
-                                            </div>
-                                        </div>
-
-                                        <div className="row">
-                                            <div className="title">
-                                                <label className="title">{post.title}</label>
-                                            </div>
-                                        </div>
-                                        
-                                    </Link>
-                                    
-
-                                    <div className="row" id="metricrow">
-                                        <label className="center width40" >
-                                            <span className="metrics"><i className="fa fa-file-image-o"> </i> {'\u00A0'} Album {'\u00A0'} {post.albumId}</span>
-                                        </label>
-
-                                        <label className="center width40">
-                                            <span onClick={this.openInNewTab.bind(this, post.url)} ><span className="metrics" ><i className="fa fa-window-maximize"></i> {'\u00A0'}  View Full Size </span></span>
-                                        </label>
-
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        )
-                    })
-                ) :
-                ( 
-                   null   
-                );
-
-        
-
+       
         return (
             <>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3 col-sm-3">
-                            <h3 className="ListHeading">Card List</h3>
-                            <i style={{ 'display': this.state.order == 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
-                            <i style={{ 'display': this.state.order == 'ascending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-asc sortList" aria-hidden="true" title="click to sort list in descending"></i>
-                            <i style={{ 'display': this.state.order == 'descending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-desc sortList" aria-hidden="true" title="Back to default order"></i>
+                         <div className="col-md-12">
+                            <h3 className="billheading">Airway Bill number</h3>
+                            <h4 className="biillnumber">56538292</h4>
+                            
                         </div>
-                        <div className="col-md-3 col-sm-3">
-                            <input type="search" className="form-control" placeholder="search card title" onChange={this.filterCards}/> 
+                    </div>
+
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="margin-area">
+                                <div className="statusicon one"><i className="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                                <div className="statusicon two"><i className="fa fa-truck" aria-hidden="true"></i></div>
+                                <div className="statusicon three"><i className="fa fa-check-square-o" aria-hidden="true"></i></div>
+                                <div className="progress-bar"> </div>
+                                <div className="message1"> <span>Ready for shipment</span></div>
+                                <div className="message2"> <span>In Transit</span></div>
+                            </div>
+
+                                                   
                         </div>
-                        
                     </div>
 
-                        
-                    <div className="row">{CardList}</div>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="tab">
+                                <button className="tablinks" id="defaultOpen" onClick={this.openTab.bind(this, 'Shipment_status')} ref={this.firsttabref}>Shipment Status</button>
+                                <button className="tablinks" onClick={this.openTab.bind(this, 'Shipment_scan')}>Shipment Shipment scan</button>
+                                <button className="tablinks" onClick={this.openTab.bind(this, 'Shipment_items')}>Shipment Items</button>
+                            </div>
 
-                    <div className="Loader" style={{ 'display': this.state.showLoader ? 'block' : 'none' }}>
-                        <Looader /> {/* by the time post gets loaded show this */}
-                    </div>
+                            <div id="Shipment_status" className="tabcontent cardview" >
+                                 <div className="row">
+                                    <div className="col-md-12">
 
-                    <div className="EmptyList" style={{'display': this.state.showemptyMessage? 'block':'none'}}>
-                        <h3 >No such item found in list </h3>
-                    </div>
-
-                    <div id="addbutton" data-target="#AddCard" data-toggle="modal">
-                        <i className="fa fa-plus-circle addCard" aria-hidden="true"></i>
-                    </div>
-
-                    {/* Code reuse: Passing method & strings as prop to Child component Modal */}
-
-                    <Modal title="Are you sure you want to delete this Card" action={this.DeleteCard.bind(this, this.state.currentpostid)} actionName="Yes" id="DeleteCard" />
-
-                    <Modal title="Add new Card to you collection" action={this.SaveCard.bind(this)} actionName="Save" id="AddCard">
-                        <div id="form" className="">
-                        
-                            <form name="AddcardForm" >
-                                <div className="row">
-                                    Enter Title :<input type="text" name="cardTitle" value={this.state.cardTitle} onChange={this.handleInputChange} className="form-control" />
+                                        <div className="table-responsive">
+                                            <table className="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Shipment delivered:
+                                                            <div className="lighttext"> Raipur pud</div>
+                                                        </td>
+                                                        <td className="lighttext right">March 23 2019 at  02:25 am</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipment out fo Delivery
+                                                             <div className="lighttext"> Raipur pud</div>
+                                                        </td>
+                                                        <td className="lighttext right">March 23 2019 at  02:25 am </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Paper work inscan
+                                                             <div className="lighttext"> Raipur pud</div>
+                                                        </td>
+                                                        <td className="lighttext right">March 23 2019 at  02:25 am</td>
+                                                    </tr>
+                                                    <tr >
+                                                        <td >Shipment arrived
+                                                             <div className="lighttext"> Raipur pud
+                                                             </div>
+                                                        </td>
+                                                        <td className="lighttext right">March 23 2019 at  02:25 am</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td >Security cleared
+                                                             <div className="lighttext"> Raipur pud
+                                                            </div>
+                                                        </td>
+                                                        <td className="lighttext right">March 23 2019 at  02:25 am</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
+
+                            </div>
+                            <div id="Shipment_scan" className="tabcontent cardview" >
                                 <div className="row">
-                                    Album Id :<input type="text" name="albumId" value={this.state.albumId} onChange={this.handleInputChange} className="form-control" />
+                                    <div className="col-md-12">
+
+                                        <div className="table-responsive">
+                                            <table className="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Address scan:
+                                                            <div className="lighttext"> Optional</div>
+                                                        </td>
+                                                        <td className="lighttext right"><i className="fa fa-times" aria-hidden="true"></i> {'\u00A0'} Cancelled</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping label scan
+                                                             <div className="lighttext">Mandate</div>
+                                                        </td>
+                                                        <td className="lighttext right"><i className="fa fa-check-circle" aria-hidden="true"></i> {'\u00A0'}  Done</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Invoivce scan
+                                                             <div className="lighttext"> Mandate</div>
+                                                        </td>
+                                                        <td className="lighttext right"><i className="fa fa-check-circle" aria-hidden="true"></i> {'\u00A0'}  Done</td>
+                                                    </tr>
+                                                    <tr >
+                                                        <td >Barcode scan
+                                                             <div className="lighttext"> Mandate
+                                                             </div>
+                                                        </td>
+                                                        <td className="lighttext right"><i className="fa fa-check-circle" aria-hidden="true"></i> {'\u00A0'} Done</td>
+                                                    </tr>
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div id="Shipment_items" className="tabcontent cardview" >
                                 <div className="row">
-                                    Image Url  :<input type="url" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} className="form-control" placeholder="Enter url" describedby="helpertext" />
-                                        <span id="helpertext" class="help-block">Please enter a valid image url</span>
+                                    <div className="col-md-12">
+
+                                        <div className="table-responsive">
+                                            <table className="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>American tourister baggage:
+                                                            <div className="lighttext"> 1 pc</div>
+                                                        </td>
+                                                        <td className="lighttext right">Rs 3520</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Intex powerbank
+                                                             <div className="lighttext">1 pc</div>
+                                                        </td>
+                                                        <td className="lighttext right">Rs 799</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Addidas trek shoes
+                                                             <div className="lighttext"> 1 pair</div>
+                                                        </td>
+                                                        <td className="lighttext right">Rs 2000</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                            </form>
+                            </div>
+
                         </div>
-                    </Modal>
-                    
+                    </div>
+
+
+                    <footer>
+                        <p>Made by: Dhiren singh Copyright &copy; 2019 React Assignment, Banglore, India</p>
+                        <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
+                        <ul className="footer">
+                            <li><a href="#" title="">Privacy</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="">Legal</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="">Terms of use</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="">Contact</a></li>
+                        </ul>
+                    </footer>
+
+                        
                 </div>
             </> /* Fragments prevent creatio of extra nodes */
         )

@@ -14,7 +14,7 @@ class cardDetails extends Component
         console.log(this.props);
 
         axios.get('https://jsonplaceholder.typicode.com/photos/' + id)
-            .then(res => {
+        .then(res => {
                 this.setState({
                     cardDetails: res.data
                 });
@@ -30,11 +30,11 @@ class cardDetails extends Component
         const cardDetails = this.state.cardDetails ?
             (
                 <div className="mycard">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Card details</h1>
+                    <div className="panel panel-info">
+                        <div className="panel-heading">
+                            <h1 className="panel-title">Card details</h1>
                         </div>
-                        <div class="panel-body">
+                        <div className="panel-body">
                    
                             <div className="row" onClick={this.openInNewTab.bind(this, this.state.cardDetails.thumbnailUrl)}>
                                 <div className="center">
