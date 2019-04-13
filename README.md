@@ -36,6 +36,8 @@ npm install axios<br>
 npm install --save react-router-dom<br>
 npm install auth0<br>
 
+npm install jquery --save
+
 The following cdns are included in index.html via scipt/links
 [Bootstrap3.7](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js),
 [jQuery3.3](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js),
