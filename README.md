@@ -59,15 +59,7 @@ Impemented User Sign in page(Authorizartion via integrating .[auth0](https://aut
 Auth0 provides authentication and authorization as a service to make application secure
 
 
-`email -testdhirensapp@react.com`<br>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+`email -testdhirensapp@react.com`<br>
 `password-  123456789@Dps`
 
 
@@ -99,3 +91,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+![alt text](https://drive.google.com/open?id=1gbHP-J12A9Y8G_LLl-Fl2PgSCBrxfnFI)
