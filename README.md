@@ -68,7 +68,7 @@ Auth0 provides authentication and authorization as a service to make application
 1. Impemented User Sign in page(Authorizartion via .auth0 )Auth0 provides authentication and authorization as a service to make application secure.
 2. Implemented  Routing mechanism- Navigation to different pages
 3. Navigation bar
-4. List of cards- in Home tab
+4. List of cards- in Cards tab
 5. Delete action- icon on top right of each button
 6. Add actiom: bottom right of Home window
 7. Implemented Modals on both actions.
@@ -81,6 +81,7 @@ Auth0 provides authentication and authorization as a service to make application
 14. Post list page with animation clicking on any post opens Post Details fetched via API call
 15. My Portfolio 
 16. Implemented React portal usage
+17. Home page with tab swithing & progressbar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -91,6 +92,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-
-![image1](src/screenshots/Screenshot from 2019-04-14 03-37-32.png)
-![image1](https://raw.githubusercontent.com/dhirendrapratapsingh/ReactApp/tree/master/src/screenshots/Screenshot from 2019-04-14 03-37-32.png)
