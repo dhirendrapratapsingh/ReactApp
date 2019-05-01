@@ -8,7 +8,7 @@ const Navbar = () => {
        
 
 <nav className="navbar navbar-default" >
-        <div className="container-fluid container dodgerblue">
+    <div className="container-fluid container dodgerblue">
 
         <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">

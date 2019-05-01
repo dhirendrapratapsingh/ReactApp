@@ -92,3 +92,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+
+### `Priviews`
+
+<img src="src/screenshots/Screenshot from 2019-04-14 03-37-32" width="700px">
+
+<img src="src/screenshots/Screenshot%20from%202019-04-14%2003-37-32" width="700px">
+
