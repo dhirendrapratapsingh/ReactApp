@@ -100,3 +100,7 @@ You will also see any lint errors in the console.
 
 <img src="src/screenshots/Screenshot%20from%202019-04-14%2003-37-32" width="700px">
 
+<img src="src/screenshots/04-03-26.png" width="700px">
+
+![Screenshot from 2019-04-14 03-50-26](https://user-images.githubusercontent.com/32532380/57039783-38b9f900-6c7b-11e9-95a9-28106bc7c521.png)
+
