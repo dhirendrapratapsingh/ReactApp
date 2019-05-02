@@ -272,7 +272,7 @@ class Cardss extends Component
         return (
             <>
                 <div className="container">
-                    <div className="row">
+                    <div className="row" style={{ marginTop: '20px' }}>
                         <div className="col-md-3 col-sm-3">
                             <h3 className="ListHeading">Card List</h3>
                             <i style={{ 'display': this.state.order === 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
@@ -280,7 +280,7 @@ class Cardss extends Component
                             <i style={{ 'display': this.state.order === 'descending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-desc sortList" aria-hidden="true" title="Back to default order"></i>
                         </div>
                         <div className="col-md-3 col-sm-3">
-                            <input type="search" className="form-control" placeholder="search card title" onChange={this.filterCards}/> 
+                            <input type="search" className="form-control" id="search" placeholder="search card title" onChange={this.filterCards}/> 
                         </div>
                         
                     </div>

@@ -96,11 +96,20 @@ You will also see any lint errors in the console.
 
 ### `Priviews`
 
-<img src="src/screenshots/Screenshot from 2019-04-14 03-37-32" width="700px">
+<!-- <img src="src/screenshots/image1.png" width="700px"> -->
 
-<img src="src/screenshots/Screenshot%20from%202019-04-14%2003-37-32" width="700px">
 
-<img src="src/screenshots/04-03-26.png" width="700px">
+![Screenshot from 2019-05-02 12-00-39](https://user-images.githubusercontent.com/32532380/57061135-78afc900-6cd9-11e9-94a4-7a6f26850beb.png)
 
-![Screenshot from 2019-04-14 03-50-26](https://user-images.githubusercontent.com/32532380/57039783-38b9f900-6c7b-11e9-95a9-28106bc7c521.png)
+![Screenshot from 2019-05-02 12-01-43](https://user-images.githubusercontent.com/32532380/57061137-78afc900-6cd9-11e9-8445-17115cd68e3e.png)
+
+![Screenshot from 2019-05-02 12-01-59](https://user-images.githubusercontent.com/32532380/57061138-79485f80-6cd9-11e9-84a9-c33e09e9a8cd.png)
+
+![Screenshot from 2019-05-02 12-02-20](https://user-images.githubusercontent.com/32532380/57061139-79485f80-6cd9-11e9-8f0b-451366024f1f.png)
+
+![Screenshot from 2019-05-02 12-02-43](https://user-images.githubusercontent.com/32532380/57061140-79485f80-6cd9-11e9-8f41-594cac0b4f43.png)
+
+![Screenshot from 2019-05-02 12-44-47](https://user-images.githubusercontent.com/32532380/57061141-79e0f600-6cd9-11e9-80f1-a8bbc8a8eed7.png)
+
+![Screenshot from 2019-05-02 12-52-55](https://user-images.githubusercontent.com/32532380/57061143-79e0f600-6cd9-11e9-9e5c-f8b53a221a7c.png)
 
