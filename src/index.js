@@ -5,7 +5,7 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 import {Provider} from 'react-redux'
 //like HoC provide the application with store by wrapping around App a glue between react app & reuxx store
 

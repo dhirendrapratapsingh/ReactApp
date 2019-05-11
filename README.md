@@ -4,10 +4,11 @@
 
 [React JS(UI)](https://reactjs.org/docs/getting-started.html),
 [axios( http API Calls)](https://www.npmjs.com/package/axios),
+[Redux( satate management)](https://redux.js.org/introduction/getting-started),
 [Bootstrap3.7](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js), <br>
 [jQuery3.3](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js),
 [Fontawsome](https://fontawesome.com/v4.7.0/icons/), 
-[MaterializeCSS](https://materializecss.com/getting-started.html),
+[Materialize](https://materializecss.com/getting-started.html),
 [reactRouter](https://www.npmjs.com/package/react-router-dom)
 [npm](https://www.npmjs.com/)
 [auth0](https://auth0.com/docs)
@@ -34,6 +35,7 @@ stop ctrl+c to add dependencies
 
 npm install axios<br>
 npm install --save react-router-dom<br>
+npm install redux react-redux<br>
 npm install auth0<br>
 
 npm install jquery --save
@@ -184,9 +186,8 @@ Post list Responsive layouts
 Post Details
 ![Screenshot from 2019-05-11 16-40-26](https://user-images.githubusercontent.com/32532380/57569160-92a28780-740e-11e9-9710-3b8029af85c5.png)
 
-Contact- Portfoli
+Contact- CV/Portfolio 
 ![Screenshot from 2019-05-11 16-40-09](https://user-images.githubusercontent.com/32532380/57569172-ae0d9280-740e-11e9-8c5d-38374f6a6e75.png)
- page
 
 
 
