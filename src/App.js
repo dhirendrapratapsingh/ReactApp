@@ -11,8 +11,8 @@ import Contact from './components/Contact'
 import Post from './components/Posts'
 import CardDetails from './components/CardDetails'
 import LoginForm from './components/LoginForm';
-import "./App.css";
-import "./index.css";
+import "./css/App.css";
+import './css/cv.css';
 
 class App extends Component {
   render() {

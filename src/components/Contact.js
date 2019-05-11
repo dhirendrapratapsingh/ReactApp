@@ -1,5 +1,4 @@
 import React from 'react'
-import './cv.css'
 
 const Contact = () => {
     return (
@@ -10,7 +9,7 @@ const Contact = () => {
                 
                 <div id="header">
                 <p id="name">Dhirendra pratap singh</p>
-                <a href="mailto:dhirendrapratapsingh398@gmail.com" target="_blank"><p id="email">dhirendrapratapsingh398@gmail.com</p></a>
+                <a href="mailto:dhirendrapratapsingh398@gmail.com" target="_blank" rel="noopener noreferrer"><p id="email">dhirendrapratapsingh398@gmail.com</p></a>
                 </div>
                 
                 <div class="data">

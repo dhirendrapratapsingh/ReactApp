@@ -1,48 +1,41 @@
 import React from 'react';
 import {  NavLink} from "react-router-dom";
-import brandlogo from '../airbnblogo2.png'
+import brandlogo from '../dhirencorp.png'
 
 
 const Navbar = () => {
     return (
        
+<>
+    <nav className="navbar navbar-default" >
+        <div className="nav-wrapper container">
 
-<nav className="navbar navbar-default" >
-    <div className="container-fluid container dodgerblue">
-
-        <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-            </button>
-                    <a className="navbar-brand " href="/home"><img src={brandlogo} alt="brand logo" style={{'width':'100px'}} /></a>
-        </div>
-
-        <div className="collapse navbar-collapse" id="alignment-example">
-
-            <ul className="nav navbar-nav right">
-                <li><NavLink to="/home">Home</NavLink></li>
-                <li><NavLink to="/cards">Cards</NavLink></li>
-                <li><NavLink to='/PostList'>Posts</NavLink></li>
-                <li><NavLink to='/contact'>About me</NavLink></li>
-                        
-                {/* <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span className="caret"></span></a>
-                    <ul className="dropdown-menu" aria-labelledby="about-us">
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </li> */}
-            </ul>
-
+           
+        <a className="logo-container" href="/home"><img src={brandlogo} alt="brand logo" style={{ 'width': '100px'}} /></a>
+        
+        <ul className="right" id="topnavbar">
+            <li><NavLink to="/home">Home</NavLink></li>
+            <li><NavLink to="/cards">Cards</NavLink></li>
+            <li><NavLink to='/PostList'>Posts</NavLink></li>
+            <li><NavLink to='/contact'>About me</NavLink></li>
+            
+        </ul>
 
         </div>
+    </nav>
+    <ul id="slide-out" className="sidenav">
 
-    </div>
-</nav>
+        <li><NavLink className="waves-effect sidenav-close" to="/home">Home</NavLink></li>
+        <li><NavLink className="waves-effect sidenav-close" to="/cards">Cards</NavLink></li>
+        <li><NavLink className="waves-effect sidenav-close" to='/PostList'>Posts</NavLink></li>
+        <li><NavLink className="waves-effect sidenav-close" to='/contact'>About me</NavLink></li>
+      
+    </ul>
+
+    <a href=";" data-target="slide-out" className="sidenav-trigger">
+        <span className="glyphicon glyphicon-align-justify"></span>
+    </a>
+</>
 
  )
 }

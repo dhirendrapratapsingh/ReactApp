@@ -207,13 +207,13 @@ class Home extends Component
                         <p>Made by: Dhiren singh Copyright &copy; 2019 React Assignment, Banglore, India</p>
                         <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
                         <ul className="footer">
-                            <li><a href="#" title="">Privacy</a></li>
+                            <li><a href="/contact" title="">Privacy</a></li>
                             <li>|</li>
-                            <li><a href="#" title="">Legal</a></li>
+                            <li><a href="/contact" title="">Legal</a></li>
                             <li>|</li>
-                            <li><a href="#" title="">Terms of use</a></li>
+                            <li><a href="/contact" title="">Terms of use</a></li>
                             <li>|</li>
-                            <li><a href="#" title="">Contact</a></li>
+                            <li><a href="/contact" title="">Contact</a></li>
                         </ul>
                     </footer>
 
