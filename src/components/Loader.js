@@ -1,9 +1,10 @@
 import React from 'react';
+import LoaderGif from '../ajax-loader-circular.gif' /* .. to go one step back */
 
 const Looader = () => {
     return (
         <div className="center">
-            <img src="https://ui-ex.com/images/gif-transparent-loading-4.gif" style={{ width: '150px' }} alt="loader"/>
+            <img src={LoaderGif}  alt="loader"/>
         </div>
     )
 }

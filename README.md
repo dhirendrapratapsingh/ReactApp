@@ -125,7 +125,7 @@ You will also see any lint errors in the console.
 ![Screenshot from 2019-05-02 12-52-55](https://user-images.githubusercontent.com/32532380/57061143-79e0f600-6cd9-11e9-9e5c-f8b53a221a7c.png)
 
  -->
- Login page
+Login page
 
 ![Screenshot from 2019-05-11 16-47-08](https://user-images.githubusercontent.com/32532380/57568986-8b7a7a00-740c-11e9-852b-a7858d5882d0.png)
 

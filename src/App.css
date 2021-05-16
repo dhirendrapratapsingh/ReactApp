@@ -1,0 +1,207 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  pointer-events: none;
+  width: 200px;
+  height: 200px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app {
+  background: #209cee;
+  padding: 30px;
+  height: 100vh;
+}
+
+.todo-list {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 60%;
+  margin-left: 20%;
+}
+
+.todo {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ListHeading
+{
+  float: left;
+  color: gray;
+  margin-top: 2px;
+}
+
+nav.brand-logo
+{
+  position: relative;
+
+}
+
+.mycard
+{
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px rgba(0,0,0,.05)  !important;
+  margin: 10px;
+
+}
+.mycard:hover
+{
+  box-shadow: 10px 10px 14px rgba(0,0,0,.1)  !important;	
+
+}
+.avtar
+{
+  border-radius: 50% ;
+  width: 100px  ;
+  height: 100px  ;
+  border-color: #cfdbe2;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.08);
+  margin-top: 15px;
+}
+
+.title
+{
+  font-weight: normal  ;
+  text-align: center  ;
+  font-size: 16px  ;
+  line-height: 15px  ;
+  color: gray;
+  margin: 20px;
+  height: 40px;
+}
+.metrics {
+  border: 1px solid #ddd;
+  border-radius: 17px;
+  padding: 5% 10%;
+  margin: 2px;
+  width: 90% !important;
+  float: left;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: lighter;
+  cursor: pointer;
+  color: gray;
+}
+
+.center
+{
+  text-align:center;
+}
+  
+.width40
+{
+  width: 40%;
+}
+
+.row { 
+		margin-right: 0px !important;
+		margin-left: 0px !important;
+  }
+.delIcon
+{
+  color: #11a0d191;
+  font-size: 20px;
+  margin: 7px 10px;
+  cursor: pointer;
+}
+
+.Loader
+{
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+
+#addbutton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+.sortList
+{
+  font-size: 20px;
+    color: gray;
+    padding: 5px;
+    cursor: pointer;
+    float: left;
+  margin-left: 20px;
+}
+
+.addCard
+{
+  font-size: 40px;
+  color: dodgerblue;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: none;
+    background: transparent !important; ;
+    padding: 0; 
+    max-height: 100% !important; 
+    width: 100%!important; 
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity; 
+}
+
+.EmptyList
+{
+  text-align: center;
+  color: silver;
+}
+
+.panel{
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
