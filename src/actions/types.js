@@ -1,0 +1,2 @@
+export const FETCH_CARD_LIST = "FETCH_CARD_LIST";
+export const SET_CARD_LIST = "SET_CARD_LIST";

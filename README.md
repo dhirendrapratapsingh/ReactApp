@@ -35,6 +35,7 @@ stop ctrl+c to add dependencies
 
 npm install axios<br>
 npm install --save react-router-dom<br>
+npm install redux react-redux<br>
 npm install auth0<br>
 
 npm install jquery --save

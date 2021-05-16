@@ -38,7 +38,7 @@ class cardDetails extends Component
                    
                             <div className="row" onClick={this.openInNewTab.bind(this, this.state.cardDetails.thumbnailUrl)}>
                                 <div className="center">
-                                    <img className="avtar" src={this.state.cardDetails.thumbnailUrl} alt="Card Image" />
+                                    <img className="avtar" src={this.state.cardDetails.thumbnailUrl} alt="Card " />
                                 </div>
                             </div>
                             <div className="row" >

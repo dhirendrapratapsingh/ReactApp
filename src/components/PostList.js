@@ -47,7 +47,7 @@ class PostList extends Component
         return (
             <div>
                 <div className="container">
-                <div className="row">
+                    <div className="row" style={{ marginTop: '20px' }}>
                         <h4 className="ListHeading">PostList</h4>
                 </div>
                     {postList}

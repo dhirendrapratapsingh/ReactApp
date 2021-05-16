@@ -8,7 +8,7 @@ class Modal extends Component
     constructor(props) {
         super(props);
         this.el = document.createElement('div');
-        console.log(modalRoot);
+        //console.log(modalRoot);
         this.modelChildRef = React.createRef();
         
     }
