@@ -143,7 +143,7 @@ class Home extends Component
         console.log(event.target.value + ' , ' + this.state.CardItems.length);
 
         var updatedList = [];
-        if (this.state.order == 'none')
+        if (this.state.order === 'none')
         {
             updatedList = this.state.CardItems.sort(function (itemN, itemN_1)
             {
@@ -162,7 +162,7 @@ class Home extends Component
             this.setState({ CardItems: updatedList,
                             order : 'ascending'});
         }
-        else if (this.state.order == 'ascending')
+        else if (this.state.order === 'ascending')
         {
             updatedList = this.state.CardItems.sort(function (itemN, itemN_1) {
                 var itemN_TITLE = itemN.title.toUpperCase(); // ignore upper and lowercase
@@ -181,7 +181,7 @@ class Home extends Component
                 order: 'descending'
             });
         }
-        else if (this.state.order == 'descending')
+        else if (this.state.order === 'descending')
         {
             this.setState({
                 CardItems: this.state.CardItemsCopy,
@@ -276,9 +276,9 @@ class Home extends Component
                     <div className="row">
                         <div className="col-md-3 col-sm-3">
                             <h3 className="ListHeading">Card List</h3>
-                            <i style={{ 'display': this.state.order == 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
-                            <i style={{ 'display': this.state.order == 'ascending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-asc sortList" aria-hidden="true" title="click to sort list in descending"></i>
-                            <i style={{ 'display': this.state.order == 'descending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-desc sortList" aria-hidden="true" title="Back to default order"></i>
+                            <i style={{ 'display': this.state.order === 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
+                            <i style={{ 'display': this.state.order === 'ascending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-asc sortList" aria-hidden="true" title="click to sort list in descending"></i>
+                            <i style={{ 'display': this.state.order === 'descending' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort-desc sortList" aria-hidden="true" title="Back to default order"></i>
                         </div>
                         <div className="col-md-3 col-sm-3">
                             <input type="search" className="form-control" placeholder="search card title" onChange={this.filterCards}/> 
@@ -317,7 +317,7 @@ class Home extends Component
                                 </div>
                                 <div className="row">
                                     Image Url  :<input type="url" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} className="form-control" placeholder="Enter url" describedby="helpertext" />
-                                        <span id="helpertext" class="help-block">Please enter a valid image url</span>
+                                        <span id="helpertext" className="help-block">Please enter a valid image url</span>
                                 </div>
                                 
                             </form>

@@ -9,7 +9,7 @@ it doesnt change the data on the server but it appears like*/
 
 class PostList extends Component
 {
-    state = {
+    state = {   
         posts: []
     }
     componentDidMount() {
