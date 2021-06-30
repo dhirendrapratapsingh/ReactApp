@@ -1,0 +1,56 @@
+.app {
+    background: #209cee;
+    padding: 30px;
+    height: 100vh;
+  }
+  
+  .todo-list {
+    background: #e8e8e8;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  
+  .todo {
+    background: #fff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 3px 10px;
+    font-size: 12px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .todo>span{
+    float: left;
+    float: left;
+    max-width: 60%;
+    word-break: break-all;
+  }
+  .btn-small{
+    width: 70px;
+    font-size: 10px;
+    line-height: 10px;
+    height: 30px;
+    padding: 4px;
+    margin: 5px;
+    text-transform: capitalize;
+  }
+
+  .deleteButton{
+    border: none;
+    background: bottom;
+    font-size: 20px;
+    margin: 0 5px;
+    color: steelblue;
+  }
+  
+  nav.brand-logo
+  {
+    position: relative;
+  
+  }

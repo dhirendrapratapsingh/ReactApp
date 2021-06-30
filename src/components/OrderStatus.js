@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Home extends Component
+class OrderStatus extends Component
 {
     constructor(props) {
         super(props);
@@ -202,27 +202,24 @@ class Home extends Component
                         </div>
                     </div>
 
-
-                    <footer>
-                        <p>Made by: Dhiren singh Copyright &copy; 2019 React Assignment, Banglore, India</p>
-                        <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
-                        <ul className="footer">
-                            <li><a href="/contact" title="">Privacy</a></li>
-                            <li>|</li>
-                            <li><a href="/contact" title="">Legal</a></li>
-                            <li>|</li>
-                            <li><a href="/contact" title="">Terms of use</a></li>
-                            <li>|</li>
-                            <li><a href="/contact" title="">Contact</a></li>
-                        </ul>
-                    </footer>
-
-                        
                 </div>
+                <footer>
+                    <p>Made by: Dhiren singh Copyright &copy; 2019 React Application Prototype, Banglore, India</p>
+                    <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
+                    <ul className="footer">
+                        <li><a href="/contact" title="">Privacy</a></li>
+                        <li>|</li>
+                        <li><a href="/contact" title="">Legal</a></li>
+                        <li>|</li>
+                        <li><a href="/contact" title="">Terms of use</a></li>
+                        <li>|</li>
+                        <li><a href="/contact" title="">Contact</a></li>
+                    </ul>
+                </footer>
             </> /* Fragments prevent creatio of extra nodes */
         )
     }
 }
 
 
-export default Home;
+export default OrderStatus;

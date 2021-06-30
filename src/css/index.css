@@ -6,6 +6,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+    background-color: #b8c6db; */
+    background: #ffffff url('../image/geometry2.png'); /* Background pattern from Subtle Patterns */
+}
+
+html,body,#root, .App{
+    /* height: 100%; */
 }
 
 code {
@@ -32,13 +40,12 @@ code {
   font-size: small;
 }
 
-body
-{
-  /* background: #d9edf75e !important; */
-  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
-    background-color: #b8c6db;
-}
 html
 {
   height: 100%;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
 }
