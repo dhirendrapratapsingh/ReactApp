@@ -5,14 +5,13 @@ import React, { useState } from "react";
 function Todo({ todo, index, completeTodo, removeTodo }) {
     return (
         <div
-            className="todo"
-            style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
+            className="todo">
 
-            {todo.text}
+            <span  style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>{todo.text}</span> 
 
             <div>
-                <button onClick={() => completeTodo(index)}>Complete</button>
-                <button onClick={() => removeTodo(index)}>x</button>
+                <button className="waves-effect waves-light btn-small" onClick={() => completeTodo(index)}>Mark</button>
+                <button className="deleteButton" onClick={() => removeTodo(index)}><i className="fa fa-trash" aria-hidden="true"></i></button>
             </div>
         </div>
     );
@@ -35,6 +34,7 @@ function TodoForm({ addTodo }) // another funcyional component
                 type="text"
                 className="input"
                 value={value}
+                placeholder={"Enter task to be done"}
                 onChange={e => setValue(e.target.value)}
             />
         </form>
@@ -65,7 +65,7 @@ function ToDo()  // FUNCYIONAL Componen using Hooks
 
     const completeTodo = index => {
         const newTodos = [...todos];
-        newTodos[index].isCompleted = true;
+        newTodos[index].isCompleted = !newTodos[index].isCompleted;
         setTodos(newTodos);
     };
 
@@ -96,6 +96,19 @@ function ToDo()  // FUNCYIONAL Componen using Hooks
                 </div>
                 
             </div>
+            <footer style={{position: 'absolute', bottom:'0px', width:'100%'}}>
+                <p>Made by: Dhiren singh Copyright &copy; 2019 React Application Prototype, Banglore, India</p>
+                <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
+                <ul className="footer">
+                    <li><a href="/contact" title="">Privacy</a></li>
+                    <li>|</li>
+                    <li><a href="/contact" title="">Legal</a></li>
+                    <li>|</li>
+                    <li><a href="/contact" title="">Terms of use</a></li>
+                    <li>|</li>
+                    <li><a href="/contact" title="">Contact</a></li>
+                </ul>
+            </footer>
             
         </>
     );

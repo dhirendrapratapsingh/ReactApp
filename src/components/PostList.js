@@ -9,7 +9,7 @@ it doesnt change the data on the server but it appears like*/
 
 class PostList extends Component
 {
-    state = {   
+    state = {
         posts: []
     }
     componentDidMount() {
@@ -47,7 +47,7 @@ class PostList extends Component
         return (
             <div>
                 <div className="container">
-                    <div className="row" style={{ marginTop: '20px' }}>
+                <div className="row">
                         <h4 className="ListHeading">PostList</h4>
                 </div>
                     {postList}

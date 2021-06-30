@@ -3,10 +3,12 @@
 {
     height:40px;
     width: 99%;
-    background-color: #668284;
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin-bottom: 10px;
     padding: 5px;
-    }
+}
 
 #name {
     float:left;
@@ -17,7 +19,7 @@
 	color: #ffffff;
 }
 
-#email{
+.link{
     float:right;
     margin-right: 20px;
 	padding-bottom: 10px;
@@ -36,19 +38,18 @@
     }
 
 a:hover {
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 .data
 {
     float: left;
-    padding-left:5px;
     height: auto;
-    width: 99%;
     text-align: left;
-    background-color: #E3EDD8;
+    background-color: #00bcd40d;
+    padding: 0 10px;
     padding-bottom: 20px;
-    }
+}
 
 
 #job-responsibilities
@@ -69,10 +70,10 @@ td
     border: 1px solid #E88741;
     }
 
-#course-name
+.course-name
 {
     font-weight:bold;
-    }
+}
 
 #company-name
 {
@@ -90,4 +91,4 @@ td
 #heading
 {
     font-weight:bold;
-    }
+}

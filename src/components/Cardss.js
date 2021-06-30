@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import $ from 'jquery';
+//import $ from 'jquery';
 import Looader from './Loader';
 import Modal from './Modal';
 import { Link } from "react-router-dom";
@@ -26,10 +26,13 @@ class Cardss extends Component
             showemptyMessage : false,
             showLoader : false,
             order : 'none',
-            getDerivedStateFromPropsCall : true
+            getDerivedStateFromPropsCall : true,
+            offset : 21
         };
 
-        //this.loadMoreCards = this.loadMoreCards.bind(this)
+        this.onscrollFunction = this.onscrollFunction.bind(this);
+        //This LOC Iis important to clear the event listeners on unmount. Unbinding can only happen after binding 
+
     }
 
 
@@ -49,18 +52,35 @@ class Cardss extends Component
 
         //PAGINATION CODE getMoreCards
 
-        var offset =21; //var by default become part of this
-        var prop = this.props
-        
-        $(window).scroll(function () {
-            if ($(window).scrollTop() === $(document).height() - $(window).height())
-            {
-                console.log('paginated from ' + offset + ' to ' + offset + 9);
-                prop.getMoreCards(offset);
 
-                offset = offset + 9;
-            }
-        });
+        this.optimizedFetch = throttle(this.getMoreCards, 2000);
+        
+        window.addEventListener('scroll', this.onscrollFunction,false) ;
+
+    }
+
+    getMoreCards = (offset) => {
+
+        this.props.getMoreCards(offset);
+        this.setState((prevState)=>({'offset': prevState.offset+9}) );
+
+    }
+
+    onscrollFunction =  (event)=> {
+        var currentScrollPosition = event.target.scrollingElement.scrollTop;
+
+        if (currentScrollPosition >= document.body.clientHeight-window.innerHeight-500) { 
+            //500px before scroll reaches end of documnet, concatenate new cards
+            console.log("get more cards");
+            this.optimizedFetch(this.state.offset);
+            
+        }
+   
+    }
+
+    componentWillUnmount(){ //Clear scroll listener to avoid memory leak
+        
+        window.removeEventListener('scroll',this.onscrollFunction,false);
 
     }
   
@@ -362,7 +382,7 @@ class Cardss extends Component
         return (
             <>
                 <div className="container">
-                    <div className="row" style={{ marginTop: '20px' }}>
+                    <div className="row" >
                         <div className="col-md-3 col-sm-3">
                             <h3 className="ListHeading" >Card List</h3>
                             <i style={{ 'display': this.state.order === 'none' ? 'block' : 'none' }} onClick={this.sortList} className="fa fa-sort sortList" aria-hidden="true" title="click to sort list in ascending"></i>
@@ -477,6 +497,25 @@ const mapDispatchToProps = (dispatch) =>
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cardss); //{ fetchCardList }
 
+
+function throttle(fn,delay){
+
+    var shouldUpdate = true, context, args;
+    return function(){
+        context = this;
+        args = arguments;
+        if(shouldUpdate){
+            fn.apply(context,args);
+            shouldUpdate = false;
+            setTimeout(()=>{
+                console.log('expensive function called');
+                shouldUpdate = true;
+            },delay);
+        }
+
+    }
+    
+}
 
 //these methods were used if no redux
 

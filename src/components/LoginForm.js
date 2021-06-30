@@ -6,10 +6,7 @@ class LoginForm extends Component
 {
 
     /* I have used Auth0 for the Login feature in my App  & show my Integratin skills
-    :Auth0 provides authentication and authorization as a service. 
-    We are here to give developers and companies the building blocks they need to secure their 
-    applications without having to become security experts. ... Based on your app's technology,
-    choose one of our SDKs (or call our API), and hook it up to your app. */
+    :Auth0 provides authentication and authorization as a service.  */
 
 
     auth0 = new auth0.WebAuth({
