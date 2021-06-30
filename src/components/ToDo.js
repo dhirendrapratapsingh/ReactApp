@@ -49,7 +49,7 @@ function ToDo()  // FUNCYIONAL Componen using Hooks
             isCompleted: false
         },
         {
-            text: "Meet friend forbrand-logo lunch",
+            text: "Meet friend for lunch",
             isCompleted: false
         },
         {
@@ -96,7 +96,7 @@ function ToDo()  // FUNCYIONAL Componen using Hooks
                 </div>
                 
             </div>
-            <footer style={{position: 'absolute', bottom:'0px', width:'100%'}}>
+            <footer style={{width:'100%'}}>
                 <p>Made by: Dhiren singh Copyright &copy; 2019 React Application Prototype, Banglore, India</p>
                 <p>Contact information: <a href="mailto:dhirendrapratapsingh398@gmail.com">dhirendrapratapsingh398@gmail.com</a>.</p>
                 <ul className="footer">

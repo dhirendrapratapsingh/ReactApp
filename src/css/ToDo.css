@@ -27,12 +27,12 @@
 
   .todo>span{
     float: left;
-    float: left;
     max-width: 60%;
-    word-break: break-all;
+    word-wrap: break-word;
+    text-align: left;
   }
   .btn-small{
-    width: 70px;
+    max-width: 100px;
     font-size: 10px;
     line-height: 10px;
     height: 30px;
