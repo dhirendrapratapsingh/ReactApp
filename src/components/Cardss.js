@@ -430,7 +430,7 @@ class Cardss extends Component
                             </form>
                         </div>
                     </Modal>
-                    <Modal title="Update Card to wish to" action={this.UpdateCard.bind(this)} actionName="Save" id="EditCard">
+                    <Modal title="Update Card you wish to" action={this.UpdateCard.bind(this)} actionName="Save" id="EditCard">
                         <div id="form" className="">
 
                             <form name="AddcardForm" >
