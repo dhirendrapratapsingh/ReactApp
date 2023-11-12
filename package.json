@@ -5,7 +5,7 @@
   "dependencies": {
     "auth0": "^2.34.2",
     "auth0-js": "^9.10.1",
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "jquery": "^3.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
